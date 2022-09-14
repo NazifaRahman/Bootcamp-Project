@@ -12,6 +12,7 @@ public class PersonalInformation extends Browser {
     @FindBy(css = "span[class = 'ant-tag ant-tag-processing']") private List<WebElement> edit;
     @FindBy(css = "button[class = 'ant-btn ant-btn-primary']") private List<WebElement> NextandSaveButton;
     @FindBy(xpath = "//div[@class = 'ant-select ant-select-single ant-select-allow-clear ant-select-show-arrow ant-select-show-search']") private List<WebElement> options;
+    @FindBy(css = "span[class = 'ant-select-selection-item']") private List<WebElement> selectArrow;
 
     public PersonalInformation validatePageTitle(String pageTitle) {
         Assert.assertEquals(driver.getTitle(), pageTitle);
@@ -23,7 +24,6 @@ public class PersonalInformation extends Browser {
         NextandSaveButton.get(0).click();
         NextandSaveButton.get(0).click();
 
-        List <WebElement> selectArrow = driver.findElements(By.cssSelector("span[class = 'ant-select-selection-item']"));
         selectArrow.get(3).click();
 
         for(WebElement element: options) {

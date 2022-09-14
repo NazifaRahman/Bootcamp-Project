@@ -16,6 +16,8 @@ public class RecruitmentJobs extends Browser {
     @FindBy(xpath = "//span[@class = 'ant-tag ant-tag-orange']") private WebElement clickJobLink;
     @FindBy(id = "linkUrl") private WebElement jobURL;
     @FindBy(xpath = "//button[@class = 'btn']") List<WebElement> okButton;
+    @FindBy(xpath = "//tr[@class = 'ant-table-row ant-table-row-level-0 table-row-light']/td[2]") private WebElement jobTitleElement;
+    @FindBy(xpath = "//tr[@class = 'ant-table-row ant-table-row-level-0 table-row-light']/td[4]") private WebElement dept;
 
     public RecruitmentJobs searchJobCode(String jobCode) {
         searchBox.sendKeys(jobCode);
@@ -24,13 +26,11 @@ public class RecruitmentJobs extends Browser {
     }
 
     public RecruitmentJobs validateJobTitle(String jobTitle) {
-        WebElement jobTitleElement = driver.findElement(By.xpath("//tr[@class = 'ant-table-row ant-table-row-level-0 table-row-light']/td[2]"));
         Assert.assertEquals(jobTitleElement.getText(), jobTitle);
         return this;
     }
 
     public RecruitmentJobs validateDepartment(String department) {
-        WebElement dept = driver.findElement(By.xpath("//tr[@class = 'ant-table-row ant-table-row-level-0 table-row-light']/td[4]"));
         Assert.assertEquals(dept.getText(), department);
         return this;
     }

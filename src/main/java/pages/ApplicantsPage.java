@@ -30,5 +30,4 @@ public class ApplicantsPage extends Browser {
 
         return this;
     }
-
 }

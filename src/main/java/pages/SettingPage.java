@@ -11,10 +11,11 @@ import java.util.List;
 public class SettingPage extends Browser {
     @FindBy(css = "img[class = 'tableActionButton']") private List<WebElement> edit;
     @FindBy(css = "button[onclick = 'try{modJs.save()}catch(e){};return false;']") private WebElement save;
+    @FindBy(xpath = "//select[@id = 'value']") protected WebElement dropDown;
 
     public SettingPage editing() {
         edit.get(0).click();
-        Select select = new Select(driver.findElement(By.xpath("//select[@id = 'value']")));
+        Select select = new Select(dropDown);
         select.selectByVisibleText("United States");
         save.click();
 
