@@ -25,7 +25,6 @@ public class EmployeePage extends Browser{
             String lstName = lName.getText();
             System.out.println("First name: " + frstName + "    Last name: " + lstName);
         }
-
         return this;
     }
 
@@ -52,6 +51,7 @@ public class EmployeePage extends Browser{
         clickWorkHistory.click();
         return this;
     }
+
     public AdminPage navigateToAdminPage() {
         adminLink.click();
         return PageFactory.initElements(Browser.driver, AdminPage.class);

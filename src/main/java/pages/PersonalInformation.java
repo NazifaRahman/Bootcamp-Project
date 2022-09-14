@@ -64,6 +64,4 @@ public class PersonalInformation extends Browser {
         return this;
     }
 
-
-
 }

@@ -1,5 +1,6 @@
 package pages;
 
+import browser.Browser;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -9,8 +10,7 @@ import java.util.List;
 
 import static browser.Browser.driver;
 
-public class RecruitmentJobs {
-
+public class RecruitmentJobs extends Browser {
     @FindBy(id = "advanced_search_searchTerm") private WebElement searchBox;
     @FindBy(css = ".ant-btn.ant-btn-primary.ant-input-search-button") private WebElement searchButton;
     @FindBy(xpath = "//span[@class = 'ant-tag ant-tag-orange']") private WebElement clickJobLink;

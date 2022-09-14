@@ -12,12 +12,13 @@ public class SettingPage extends Browser {
     @FindBy(css = "img[class = 'tableActionButton']") private List<WebElement> edit;
     @FindBy(css = "button[onclick = 'try{modJs.save()}catch(e){};return false;']") private WebElement save;
 
-
     public SettingPage editing() {
         edit.get(0).click();
-        Select select = new Select(driver.findElements(By.xpath("//b[@role= 'presentation']")).get(1));
+        Select select = new Select(driver.findElement(By.xpath("//select[@id = 'value']")));
         select.selectByVisibleText("United States");
         save.click();
+
         return this;
     }
+
 }

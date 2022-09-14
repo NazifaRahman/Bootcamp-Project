@@ -19,4 +19,5 @@ public class RecruitmentJobsTest extends TestBase {
                 .validateDepartment("Marketing Department")
                 .copyJobLink();
     }
+
 }

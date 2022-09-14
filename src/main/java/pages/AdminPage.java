@@ -5,6 +5,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
+import java.awt.desktop.AppForegroundListener;
 import java.util.List;
 
 public class AdminPage extends Browser{
@@ -15,6 +16,7 @@ public class AdminPage extends Browser{
     @FindBy(id = "settingsLink") private WebElement gotoSetting;
     @FindBy(css = "a[href='#']>i[class = 'fa fa-th']") WebElement selectRecruitment;
     @FindBy(css = ".fa.fa-columns") private List<WebElement> selectJobPositions;
+    @FindBy(id = "candidatesLink") private WebElement Applicants;
 
     public EmployeePage navigateToEmployeePage() {
         manageEmployees.click();
@@ -40,6 +42,11 @@ public class AdminPage extends Browser{
         selectRecruitment.click();
         selectJobPositions.get(1).click();
         return PageFactory.initElements(driver, RecruitmentJobs.class);
+    }
+
+    public ApplicantsPage GotoApplicantPage(){
+        Applicants.click();
+        return PageFactory.initElements(driver, ApplicantsPage.class);
     }
 
 }

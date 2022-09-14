@@ -14,15 +14,13 @@ public class LoginPageTest extends TestBase {
         startLoginPage()
                 .loginToAdminPage()
                 .navigateToEmployeePage();
-
-
     }
+
     @Test
     public void loginToJobPageTest() {
         startLoginPage()
                 .loginToAdminPage()
                 .navigateToJobDetails();
     }
-
 
 }

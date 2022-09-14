@@ -7,14 +7,14 @@ import testlistener.TestListener;
 
 @Listeners(value = TestListener.class)
 
-public class SettingPageTest extends TestBase {
+public class ApplicantsPageTest extends TestBase {
 
     @Test
-    public void settingPageTest(){
+    public void applicantsPageTest(){
         startLoginPage()
                 .loginToAdminPage()
-                .gotoSettingPage()
-                .editing();
+                .GotoApplicantPage()
+                .addNewCandidate();
     }
 
 }
