@@ -1,6 +1,7 @@
 package pages;
 
 import browser.Browser;
+import org.checkerframework.checker.units.qual.A;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -15,16 +16,29 @@ public class EmployeePage extends Browser{
     @FindBy(id = "tabEmployeeCareer") private WebElement clickWorkHistory;
     @FindBy(linkText = "Home") private WebElement adminLink;
 
-    public EmployeePage validateFirstAndLastName (String firstName, String lastName) {
-        List<WebElement> allRows = driver.findElements(By.xpath("//td[@class = 'ant-table-cell']"));
+    public EmployeePage printAllEmployeeName () {
+        List<WebElement> allRows = driver.findElements(By.cssSelector(".ant-table-row.ant-table-row-level-0"));
         for (WebElement row: allRows) {
-            if(allRows.contains(firstName)){
-                String value = row.getText();
-               // WebElement cName =driver.findElement(By.xpath("//td[3]"));
-               // String value = cName.getText();
-                System.out.println("###### " + value);
-            }
+            WebElement fName =row.findElement(By.xpath("td[3]"));
+            WebElement lName = row.findElement(By.xpath("td[4]"));
+            String frstName = fName.getText();
+            String lstName = lName.getText();
+            System.out.println("First name: " + frstName + "    Last name: " + lstName);
         }
+
+        return this;
+    }
+
+    public EmployeePage validateFirstandLastName (String firstName, String lastName) {
+        List<WebElement> allRows = driver.findElements(By.cssSelector(".ant-table-row.ant-table-row-level-0"));
+        WebElement element = allRows.get(2);
+        WebElement fName =element.findElement(By.xpath("td[3]"));
+        WebElement lName = element.findElement(By.xpath("td[4]"));
+        String frstName = fName.getText();
+        String lstName = lName.getText();
+        Assert.assertEquals(frstName, firstName);
+        Assert.assertEquals(lstName, lastName);
+
         return this;
     }
 

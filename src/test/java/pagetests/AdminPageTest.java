@@ -11,13 +11,18 @@ import util.Util;
 public class AdminPageTest extends TestBase {
 
     @Test
-    public void viewAllTasksTest(){
+    public void navigateToRecruitmentTest(){
         startLoginPage()
                 .loginToAdminPage()
-                .viewAllTask()
                 .dropDownRecruitment();
-
-
     }
+
+    @Test
+    public void navigatetoSettingPageTest(){
+        startLoginPage()
+                .loginToAdminPage()
+                .gotoSettingPage();
+    }
+
 
 }

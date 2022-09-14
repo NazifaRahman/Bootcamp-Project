@@ -11,7 +11,7 @@ import java.util.List;
 public class PersonalInformation extends Browser {
     @FindBy(css = "span[class = 'ant-tag ant-tag-processing']") private List<WebElement> edit;
     @FindBy(css = "button[class = 'ant-btn ant-btn-primary']") private List<WebElement> NextandSaveButton;
-    @FindBy(xpath = "//div[@class = 'ant-select-item ant-select-item-option']") private List<WebElement> options;
+    @FindBy(xpath = "//div[@class = 'ant-select ant-select-single ant-select-allow-clear ant-select-show-arrow ant-select-show-search']") private List<WebElement> options;
 
     public PersonalInformation validatePageTitle(String pageTitle) {
         Assert.assertEquals(driver.getTitle(), pageTitle);

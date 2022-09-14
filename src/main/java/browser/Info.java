@@ -1,10 +1,10 @@
 package browser;
 
 public class Info {
-    public static final String URL = "https://icehrmpro.gamonoid.com/";
+    public static final String URL = "https://icehrm.com/app/nazifa72";
     public static String browser = "chrome";
-    public static final String USER_NAME = "admin";
-    public static final String PASSWORD = "admin";
+    public static final String USER_NAME = "nazifarahman72@gmail.com";
+    public static final String PASSWORD = "Abc12345@";
 
     //final: constant
     //static: no need to create objects

@@ -15,7 +15,8 @@ public class EmployeePageTest extends TestBase {
         startLoginPage()
                 .loginToAdminPage()
                 .navigateToEmployeePage()
-                .validateFirstAndLastName("Lala", "Lamees")
+                .printAllEmployeeName()
+                .validateFirstandLastName("John", "Doe")
                 .searchEmployeeId("EMP003")
                 .workHistory()
                 .navigateToAdminPage();
