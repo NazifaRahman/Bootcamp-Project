@@ -10,7 +10,6 @@ public class Browser {
     public static WebDriver driver;
 
     public static WebDriver initializeBrowser() {
-
         if (Info.browser.equalsIgnoreCase("chrome")) {
             WebDriverManager.chromedriver().setup();
             driver = new ChromeDriver();

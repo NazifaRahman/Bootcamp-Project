@@ -12,7 +12,7 @@ public class AdminPage extends Browser{
 
     @FindBy(id = "employeeLink") private WebElement manageEmployees;
     @FindBy(linkText = "Job Details Setup") private WebElement jobDetails;
-    @FindBy(linkText = "IceHrm Employee") private WebElement myDetails;
+    @FindBy(linkText = "Nazifa Rahman") private WebElement myDetails;
     @FindBy(id = "settingsLink") private WebElement gotoSetting;
     @FindBy(css = "a[href='#']>i[class = 'fa fa-th']") WebElement selectRecruitment;
     @FindBy(css = ".fa.fa-columns") private List<WebElement> selectJobPositions;
@@ -44,7 +44,7 @@ public class AdminPage extends Browser{
         return PageFactory.initElements(driver, RecruitmentJobs.class);
     }
 
-    public ApplicantsPage GotoApplicantPage(){
+    public ApplicantsPage gotoApplicantPage(){
         Applicants.click();
         return PageFactory.initElements(driver, ApplicantsPage.class);
     }

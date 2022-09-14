@@ -11,7 +11,7 @@ import java.util.List;
 public class PersonalInformation extends Browser {
     @FindBy(css = "span[class = 'ant-tag ant-tag-processing']") private List<WebElement> edit;
     @FindBy(css = "button[class = 'ant-btn ant-btn-primary']") private List<WebElement> NextandSaveButton;
-    @FindBy(xpath = "//div[@class = 'ant-select ant-select-single ant-select-allow-clear ant-select-show-arrow ant-select-show-search']") private List<WebElement> options;
+    @FindBy(xpath = "//div[@class = 'ant-select-item ant-select-item-option']") private List<WebElement> options;
     @FindBy(css = "span[class = 'ant-select-selection-item']") private List<WebElement> selectArrow;
 
     public PersonalInformation validatePageTitle(String pageTitle) {
@@ -35,27 +35,27 @@ public class PersonalInformation extends Browser {
 
         selectArrow.get(4).click();
 
-        for(WebElement element: options) {
-            if (element.getText().equalsIgnoreCase(department)) {
-                element.click();
+        for (WebElement element1 : options) {
+            if (element1.getText().equalsIgnoreCase(department)) {
+                element1.click();
                 break;
             }
         }
 
         selectArrow.get(5).click();
 
-        for(WebElement element: options) {
-            if (element.getText().equalsIgnoreCase(jobTitle)) {
-                element.click();
+        for (WebElement element2 : options) {
+            if (element2.getText().equalsIgnoreCase(jobTitle)) {
+                element2.click();
                 break;
             }
         }
 
         selectArrow.get(6).click();
 
-        for(WebElement element: options) {
-            if (element.getText().equalsIgnoreCase(payGrade)) {
-                element.click();
+        for (WebElement element3 : options) {
+            if (element3.getText().equalsIgnoreCase(payGrade)) {
+                element3.click();
                 break;
             }
         }

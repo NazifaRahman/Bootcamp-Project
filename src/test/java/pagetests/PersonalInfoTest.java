@@ -17,6 +17,6 @@ public class PersonalInfoTest extends TestBase {
                 .loginToAdminPage()
                 .navigateToPersonalInfo()
                 .validatePageTitle("ICE Hrm")
-                .editWorkInfo("Part Time Internship", "QA Team", "QA Engineer", "Manager");
+                .editWorkInfo("Part Time Internship", "Head Office", "QA Engineer", "Manager");
     }
 }

@@ -13,7 +13,7 @@ public class ApplicantsPageTest extends TestBase {
     public void applicantsPageTest(){
         startLoginPage()
                 .loginToAdminPage()
-                .GotoApplicantPage()
+                .gotoApplicantPage()
                 .addNewCandidate();
     }
 

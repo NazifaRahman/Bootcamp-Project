@@ -14,7 +14,7 @@ public class RecruitmentJobs extends Browser {
     @FindBy(id = "advanced_search_searchTerm") private WebElement searchBox;
     @FindBy(css = ".ant-btn.ant-btn-primary.ant-input-search-button") private WebElement searchButton;
     @FindBy(xpath = "//span[@class = 'ant-tag ant-tag-orange']") private WebElement clickJobLink;
-    @FindBy(id = "linkUrl") private WebElement jobURL;
+    @FindBy(id = "linkUrl") private WebElement clickJobURL;
     @FindBy(xpath = "//button[@class = 'btn']") List<WebElement> okButton;
     @FindBy(xpath = "//tr[@class = 'ant-table-row ant-table-row-level-0 table-row-light']/td[2]") private WebElement jobTitleElement;
     @FindBy(xpath = "//tr[@class = 'ant-table-row ant-table-row-level-0 table-row-light']/td[4]") private WebElement dept;
@@ -35,9 +35,9 @@ public class RecruitmentJobs extends Browser {
         return this;
     }
 
-    public RecruitmentJobs copyJobLink(){
+    public RecruitmentJobs clickJobLink(){
         clickJobLink.click();
-        jobURL.click();
+        clickJobURL.click();
         okButton.get(1).click();
         return this;
     }

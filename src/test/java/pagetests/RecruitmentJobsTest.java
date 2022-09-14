@@ -17,7 +17,7 @@ public class RecruitmentJobsTest extends TestBase {
                 .searchJobCode("JC002")
                 .validateJobTitle("QA Senior Test Automation Engineer")
                 .validateDepartment("Marketing Department")
-                .copyJobLink();
+                .clickJobLink();
     }
 
 }

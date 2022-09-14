@@ -8,6 +8,26 @@ import testlistener.TestListener;
 @Listeners(value = TestListener.class)
 
 public class AdminPageTest extends TestBase {
+    @Test
+    public void navigateToEmployeePageTest(){
+        startLoginPage()
+                .loginToAdminPage()
+                .navigateToEmployeePage();
+    }
+
+    @Test
+    public void navigateToJobDetailsTest(){
+        startLoginPage()
+                .loginToAdminPage()
+                .navigateToJobDetails();
+    }
+
+    @Test
+    public void navigateToPersonalInfoTest(){
+        startLoginPage()
+                .loginToAdminPage()
+                .navigateToPersonalInfo();
+    }
 
     @Test
     public void navigateToRecruitmentTest(){
@@ -21,6 +41,13 @@ public class AdminPageTest extends TestBase {
         startLoginPage()
                 .loginToAdminPage()
                 .gotoSettingPage();
+    }
+
+    @Test
+    public void navigateToApplicantPageTest(){
+        startLoginPage()
+                .loginToAdminPage()
+                .gotoApplicantPage();
     }
 
 }
